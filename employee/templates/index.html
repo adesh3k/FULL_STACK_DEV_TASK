@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Full Stack Developer Task Incablet Media</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <section id="team" class="pb-5">
+        <div class="container">
+            <h5 class="section-title h1">OUR CUSTOMERS</h5>
+            <div class="row">
+                <!-- Team member -->
+                {% for c in cst %}
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="{{c.image}}" alt="{{c.name}}"></p>
+                                        <h4 class="card-title">{{ c.name }}</h4>
+                                        <p class="card-text">{{ c.age }} years</p>
+                                        <p class="card-text">{{ c.gender }}</p>
+                                        <!--<a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+  </body>
+</html>
